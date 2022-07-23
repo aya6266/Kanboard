@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Kanboard/static/css/main.b9120c80.css",
+    "main.js": "/Kanboard/static/js/main.1cd650c2.js",
+    "index.html": "/Kanboard/index.html",
+    "main.b9120c80.css.map": "/Kanboard/static/css/main.b9120c80.css.map",
+    "main.1cd650c2.js.map": "/Kanboard/static/js/main.1cd650c2.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b9120c80.css",
+    "static/js/main.1cd650c2.js"
+  ]
+}
