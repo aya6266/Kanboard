@@ -1,38 +1,242 @@
-.App {
-  text-align: center;
-}
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+:root {
+  --primary-alt: #e63946;
+  --primary: #457b9d;
+  --background: #a8dadc;
+  --light: #f1faee;
+  --dark: #1d3557;
+  font-family: "Poppins", sans-serif;
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: var(--primary);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+
+  /* font-size: calc(10px + 2vmin); */
   color: white;
 }
-
-.App-link {
-  color: #61dafb;
+.title {
+  font-size: 4rem;
+  text-align: center;
+  margin-top: 1rem;
+  background-color: var(--primary);
+  color: var(--light);
+  width: 90%;
+  align-self: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+::placeholder {
+  color: var(--light);
+  opacity: 1;
+}
+
+input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  outline: none;
+  border: none;
+}
+
+input:focus {
+  outline: none;
+}
+
+.drag-n-drop {
+  padding: 0.5rem;
+  display: grid;
+  gap: 0.5rem;
+  grid-template-columns: repeat(4, 1fr);
+  align-items: start;
+}
+
+.dnd-group {
+  background-color: var(--dark);
+  padding: 0.5rem;
+  border-radius: 5px;
+}
+
+.dnd-item {
+  background-color: var(--background);
+  color: var(--dark);
+  min-height: 150px;
+  border-radius: 5px;
+  display: flex;
+  font-weight: bolder;
+  padding: 1rem;
+  cursor: move; /* fallback if grab cursor is unsupported */
+  cursor: grab;
+  cursor: -moz-grab;
+  cursor: -webkit-grab;
+}
+.top__item {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.5rem;
+}
+.container {
+  width: 100%;
+}
+.close {
+  color: var(--primary-alt);
+  cursor: pointer;
+}
+
+h1,
+.task {
+  margin: 0.5rem 0.75rem;
+}
+.task {
+  font-size: 1.2rem;
+  width: 100%;
+}
+.bottom__item {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.group-title {
+  text-align: left;
+  margin-bottom: 0.5rem;
+  font-size: 1.5rem;
+}
+
+.dnd-item:not(:last-of-type) {
+  margin-bottom: 0.5rem;
+}
+
+.dnd-item * {
+  margin-bottom: 0;
+}
+
+.current {
+  background-color: var(--dark);
+  cursor: grabbing;
+  cursor: -moz-grabbing;
+  cursor: -webkit-grabbing;
+}
+
+.add__item__button,
+.add_task button {
+  background: var(--primary-alt);
+  color: var(--light);
+  border: var(--dark) solid 3px;
+  padding: 1rem;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+  width: 300px;
+  align-self: center;
+  border-radius: 3px;
+  margin-top: 0.8rem;
+}
+
+.add__item__button:hover,
+.add_task button:hover {
+  background: var(--dark);
+}
+
+.pop_up_background {
+  position: absolute;
+  background-color: rgba(168, 218, 220, 0.752);
+  height: 100%;
+  width: 100%;
+}
+
+.add_task {
+  height: 75%;
+  width: 75%;
+  background: var(--primary-alt);
+  position: absolute;
+  top: 10%;
+  right: 10%;
+  border-radius: 5px;
+  border: #282c34 solid 5px;
+  display: flex;
+  flex-direction: column;
+}
+
+.add_task * {
+  align-self: center;
+  margin-bottom: 2rem;
+}
+
+.add_task label {
+  font-size: 2rem;
+  margin-right: 5rem;
+}
+
+.add_task input {
+  padding: 1rem;
+  border-radius: 0.5rem;
+  font-size: 2rem;
+  background: var(--light);
+  color: var(--dark);
+  border: var(--dark) solid 3px;
+}
+
+.add_task textarea {
+  background: var(--light);
+  color: var(--dark);
+  border: var(--dark) solid 3px;
+  padding: 1rem;
+  font: inherit;
+  font-size: 1.2rem;
+  outline: inherit;
+  width: 300px;
+  align-self: center;
+  border-radius: 3px;
+  margin-top: 1.5rem;
+}
+
+.add_task button {
+  margin: 0;
+}
+
+.bottom__form {
+  display: flex;
+}
+
+.persons__task {
+  padding: 1rem;
+  text-align: center;
+
+  height: 1rem;
+  width: 1rem;
+  border: var(--dark) 0.2rem solid;
+  border-radius: 100%;
+  font-size: 1rem;
+}
+
+.title__container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pen__icon {
+  height: 1.5rem;
+  width: 1.5rem;
+  background-color: var(--primary-alt);
+  padding: 0.3rem;
+  border: var(--dark) solid 3px;
+  border-radius: 3px;
+}
+
+.title__container h1 {
+  font-size: 3.7rem;
+}
+
+.pen__icon:hover {
+  background-color: #1d3557;
+  cursor: pointer;
+}
+
+.title__edit {
+  margin-bottom: 10rem;
 }
